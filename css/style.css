@@ -6,6 +6,11 @@ body {
     /* background: #333; */
     margin: 0 auto;
     font-family: var(--regular-font);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100svh;
 }
 
 .record_block {
@@ -20,6 +25,16 @@ body {
     white-space: normal;
     word-break: break-all;
     /* box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2); */
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+    padding: 16px;
+    color: var(--text-color);
+    background: var(--background);
 }
 
 .record_block h2 {
@@ -84,9 +99,19 @@ textarea {
 }
 
 .container {
-    margin: 0 7% 0 7%;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-grow: 1;
+    padding: 15px 0;
 }
-
+.center_me {
+    justify-content: center;
+    align-items: center;
+}
 .container-fluid {
     background: var(--lg-color-90);
 }
@@ -99,10 +124,11 @@ textarea {
     justify-content: space-evenly;
     padding-top: 20px;
     padding-bottom: 20px;
+    align-items: stretch;
     width: 100%;
-    position: fixed;
     border-bottom: 30px solid var(--background);
-    top: 87%;
+    position: sticky;
+    bottom: 0;
 }
 
 .botton_menu div,
@@ -118,8 +144,8 @@ textarea {
 
 #btn3 {
     position: fixed;
-    left: 80%;
-    top: 78%
+    bottom: 25vh;
+    left: 80vw;
 }
 
 .btn_menu {
@@ -172,21 +198,6 @@ input[type=date] {
     width: 300px;
     height: 300px;
     filter: blur(110px);
-    animation: moveUpDown 8s infinite;
-    animation-play-state: running;
-    /* добавляем эту строку для запуска анимации при загрузке страницы */
-}
-
-@keyframes moveUpDown {
-    0% { transform: translate(0, 0) scale(1);}
-
-    25% { transform: translate(50px, 50px) scale(1.1);}
-
-    50% { transform: translate(10px, 0) scale(1);}
-
-    75% { transform: translate(50px, -50px) scale(0.9);}
-
-    100% { transform: translate(0, 0) scale(1);}
 }
 
 .hidden {
@@ -196,7 +207,6 @@ input[type=date] {
 
 .big_center_text {
     text-align: center;
-    margin-top: 70%;
     /* background: var(--background); */
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 0px 8px 0px rgba(153, 102, 204, 0.1);
@@ -204,11 +214,15 @@ input[type=date] {
     border-radius: 15px;
     backdrop-filter: blur(4px) saturate(166%);
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    flex-grow: 1;
 }
 
 .horoscope_block {
-    clip-path: polygon(0% 10%, 25% 0%, 75% 0%, 100% 10%, 100% 90%, 75% 100%, 25% 100%, 0% 90%);
-
+    box-shadow: 0px 0px 12px 0px rgba(255, 255, 255, 1);
 }
 
 ::selection {

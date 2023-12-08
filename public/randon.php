@@ -15,11 +15,11 @@ if (!empty($_SESSION['login'])):
     ?>
 
     <body>
-        <div
-            style="width: calc(100%-padding); background-color: var(--background); color:#333; padding:10px; text-align: center;">
+        <header class='menu'>
             <h2>Задание на сегодня</h2>
-        </div>
-        <div class='container'>
+        </header>
+        <div class='container' style="justify-content: center;">
+            <div class='center_me'>
             <?php
             date_default_timezone_set('UTC');
             $today = date('d');
@@ -36,6 +36,7 @@ if (!empty($_SESSION['login'])):
                     </p>
                 </div>
             <?php endwhile ?>
+        </div>
         </div>
         <div class='gr_curcle' style='top:40%; left: -30%;'></div>
         <div class='gr_curcle' style='top:26%; left: 30%; width: 150px; height: 150px;'></div>

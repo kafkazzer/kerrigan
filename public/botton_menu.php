@@ -1,4 +1,4 @@
-<div style='width: 100%; height:120px'></div>
+<!-- <div style='width: 100%; height:120px'></div> -->
 <div class="botton_menu">
     <div id='btn1' class='btn_menu' onclick="window.location.replace('../index.php')"><img src="../icon/paper.png" class="image_size"></div>
     <div id='btn2' class='btn_menu' onclick="window.location.replace('../public/randon.php')"><img src="../icon/random.png" class="image_size"></div>

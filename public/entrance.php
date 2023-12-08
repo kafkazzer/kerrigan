@@ -9,26 +9,32 @@
 </head>
 
 <body>
-    <div
-        style="width: calc(100%-padding); background-color: var(--background); color:#333; padding:10px; text-align: center;">
+    <header class='menu'>
         <h2>Kerrigan</h2>
-    </div>
-    <div class="container record_block"  data-aos="fade-up" data-aos-duration="1000" style="text-align:center; margin-top:40%">
+    </header>
+    <div class="container" data-aos="fade-up" data-aos-duration="1000"
+        style="text-align:center; justify-content: center;">
+        <div class='center_me'>
+            <div class="big_center_text record_block" style='backdrop-filter: none;'>
         <h2>Вход</h2>
         <hr>
         <form action="../functions/entrance.php" method="post"><br>
-            <input type="text" placeholder='Логин' name='login'>
+            <input type="text" placeholder='Логин' name='login'><br>
             <input type="password" placeholder='Пароль' name='password'>
             <hr>
-            <input type="submit" value='Войти'><a onclick="add_records()" style='margin-left: 40px' class="ent_a">Нет аккаунта?</a>
+            <input type="submit" value='Войти'><a onclick="add_records()" style='margin-left: 40px' class="ent_a">Нет
+                аккаунта?</a>
         </form>
+    </div>
+    </div>
     </div>
     <div id='modal_overlay'>
         <div class='record_block modal_block reg_block' id='modal_block2' style='visibility: hidden;'>
             <form method='post' action="../functions/reg.php">
                 <input type="text" placeholder='Имя' name='name'><br>
                 <input type="text" placeholder='Логин' name='login'><br>
-                <input type="date" placeholder='Дата рождения' name='date' id='date_block' value="2023-01-01" min="1900-01-01" max="2023-12-31"><br>
+                <input type="date" placeholder='Дата рождения' name='date' id='date_block' value="2023-01-01"
+                    min="1900-01-01" max="2023-12-31"><br>
                 <input type="password" placeholder='Пароль' name='password'>
                 <hr>
                 <input type="submit" value="Сохранить" name='save' onclick="sptil_date1()">

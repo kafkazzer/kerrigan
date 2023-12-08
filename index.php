@@ -11,15 +11,16 @@
 <?php require_once('functions/connect.php') ?>
 <?php session_start(); ?>
 <?php
-if(empty($_SESSION['promo_day'])){$_SESSION['promo_day'] = 0;}
+if (empty($_SESSION['promo_day'])) {
+    $_SESSION['promo_day'] = 0;
+}
 if (!empty($_SESSION['login'])):
     ?>
 
     <body>
-        <div
-            style="width: calc(100%-padding); background-color: var(--background); color:var(--text-color); padding:10px; text-align: center;">
+        <header class='menu'>
             <h2>Записи</h2>
-        </div>
+        </header>
         <div class='container'>
             <?php
             $sql = $pdo->prepare("SELECT heading, text, true_id FROM records WHERE id=$_SESSION[login] ORDER BY true_id DESC");
@@ -28,11 +29,11 @@ if (!empty($_SESSION['login'])):
                 ?>
                 <div class='record_block' data-aos="fade-up" data-aos-duration="1000">
                     <h2>
-                        <?php echo $res->heading ?>
+                        <?php echo htmlspecialchars($res->heading)?>
                     </h2>
                     <hr>
                     <p>
-                        <?php echo $res->text ?>
+                        <?php echo htmlspecialchars($res->text)?>
                     </p>
                     <input type="submit" value="Редактровать" id="<?php echo $res->true_id ?>" onclick='update_redord(id)'>
                 </div>
